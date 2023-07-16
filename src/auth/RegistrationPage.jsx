@@ -44,7 +44,7 @@ export const RegistrationPage = () => {
           errors.email = 'Invalid email address';
       }
       if(password ===''){
-        errors.password = 'Email is Required'
+        errors.password = 'Password is Required'
       }else if(password.length < 6){
           errors.password = 'Password must be at least 6 characters long'
       }
@@ -56,7 +56,7 @@ export const RegistrationPage = () => {
         console.log(errors)
         setFormErrors(errors);
       }else{
-          axios.post('http://127.0.0.1:8000/api//registerUser',{
+          axios.post('http://127.0.0.1:8000/api/registerUser',{
               firstname:firstname,
               lastname:lastname,
               email:email,
@@ -66,12 +66,12 @@ export const RegistrationPage = () => {
       )
       .then((response)=>{
         console.log(response.data)
+        
       })
       .catch((error)=>{
         console.log(error)
       })
-      }
-      
+     }
   }
   function Copyright(props) {
   return (
@@ -183,7 +183,7 @@ export const RegistrationPage = () => {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/" variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>
